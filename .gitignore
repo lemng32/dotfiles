@@ -1,0 +1,24 @@
+# Editor backups and temp files
+*~
+*.swp
+*.bak
+*.tmp
+
+# Cache and local state
+.cache/
+.local/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System/machine-specific
+.Xauthority
+.bash_history
+.zsh_history
+.vscode/
+
+# Authentication / keys
+.ssh/
+.gnupg/
+.secrets/
+
