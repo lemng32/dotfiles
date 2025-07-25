@@ -45,25 +45,33 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ----Neovim----
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+if [ -d "/opt/nvim-linux-x86_64/bin" ]; then
+  export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+fi
 
 # ----Node Version Manager----
-FNM_PATH="/home/nguyenlm/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
 
-# ----Themes----
-
 # Powerlevel10k
-source "$HOME/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+P10K_PATH="$HOME/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme"
+if [ -r "$P10K_PATH" ]; then
+  source "$P10K_PATH"
+  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
 
 # Auto-suggestion
-source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+AUTO_SUGGEST_PATH="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [ -r "$AUTO_SUGGEST_PATH" ]; then
+  source "$AUTO_SUGGEST_PATH"
+fi
 
 # Syntax highlight - ALWAYS KEEP AS LAST SOURCE
-source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+HIGHLIGHT_PATH="$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [ -r "$HIGHLIGHT_PATH" ]; then
+  source "$HIGHLIGHT_PATH"
+fi
