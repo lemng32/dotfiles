@@ -1,0 +1,9 @@
+[submodule "zsh/.zsh/themes/powerlevel10k"]
+	path = zsh/.zsh/themes/powerlevel10k
+	url = git@github.com:Lamp-Nguyen/powerlevel10k.git
+[submodule "zsh/.zsh/zsh-syntax-highlighting"]
+	path = zsh/.zsh/zsh-syntax-highlighting
+	url = git@github.com:Lamp-Nguyen/zsh-syntax-highlighting.git
+[submodule "zsh/.zsh/zsh-autosuggestions"]
+	path = zsh/.zsh/zsh-autosuggestions
+	url = git@github.com:Lamp-Nguyen/zsh-autosuggestions.git
