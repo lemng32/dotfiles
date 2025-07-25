@@ -1,3 +1,7 @@
+vim.opt.guicursor = {
+  "i-ci-ve:block-TermCursor",
+}
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

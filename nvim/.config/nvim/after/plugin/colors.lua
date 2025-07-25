@@ -12,6 +12,8 @@ function UseCatppuccinMocha()
         LineNr = { fg = colors.overlay1 },
         LineNrAbove = { fg = colors.overlay1 },
         LineNrBelow = { fg = colors.overlay1 },
+        TermCursor = { bg = "#f4b8e4" }, -- catppuccin frappe pink
+        Visual = { bg = colors.surface2 },
       }
     end
   })

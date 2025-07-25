@@ -37,9 +37,8 @@ element-text {
   style:            italic;
 }
 element-icon {
-  margin:           0px 0px 0px 10px;
-  background-color: transparent;
-  size:             1.2em ;
+  background-color: @overlay0;
+  size:             1em ;
   cursor:           inherit;
   text-color:       inherit;
 }
