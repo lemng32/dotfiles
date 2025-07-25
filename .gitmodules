@@ -1,9 +1,9 @@
 [submodule "zsh/.zsh/themes/powerlevel10k"]
 	path = zsh/.zsh/themes/powerlevel10k
-	url = git@github.com:Lamp-Nguyen/powerlevel10k.git
+	url = git@github.com:lemng32/powerlevel10k.git
 [submodule "zsh/.zsh/zsh-syntax-highlighting"]
 	path = zsh/.zsh/zsh-syntax-highlighting
-	url = git@github.com:Lamp-Nguyen/zsh-syntax-highlighting.git
+	url = git@github.com:lemng32/zsh-syntax-highlighting.git
 [submodule "zsh/.zsh/zsh-autosuggestions"]
 	path = zsh/.zsh/zsh-autosuggestions
-	url = git@github.com:Lamp-Nguyen/zsh-autosuggestions.git
+	url = git@github.com:lemng32/zsh-autosuggestions.git
