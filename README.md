@@ -10,3 +10,5 @@ Probably the worst dotfiles config you will ever find!
 - [ ] A lot of the configs have package depencies, automate this
 - [ ] Customize fastfetch
 - [ ] Streamline zsh plugins, don't like the way I'm doing it currently
+- [ ] Update README
+- [ ] Include config screenshots
