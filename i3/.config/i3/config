@@ -79,7 +79,7 @@ exec --no-startup-id xset s 1800 1800
 exec --no-startup-id xset dpms 1800 1800 1800
 
 # Start polkit agent
-# exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 # Use pactl and wpctl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -248,6 +248,7 @@ bindsym $mod+minus scratchpad show
 
 # Launch firefox or other browsers
 bindsym $mod+b exec firefox
+bindsym $mod+Shift+b exec firefox --new-session --private-window
 
 # Screenshot
 bindsym Shift+Print exec NOW=$(date +%d-%b-%Y_%H-%M-%S) && maim --format png --select > ~/Pictures/screenshots/screenshot_$NOW.png && xclip -selection clip -t image/png ~/screenshots/screenshot_$NOW.png

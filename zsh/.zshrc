@@ -44,6 +44,10 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+if [ -r "$HOME/.zsh_aliases" ]; then
+  source "$HOME/.zsh_aliases" 
+fi
+
 # ----Neovim----
 if [ -d "/opt/nvim-linux-x86_64/bin" ]; then
   export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
@@ -56,22 +60,20 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-# Powerlevel10k
-P10K_PATH="$HOME/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme"
+# ----Fuzzy finder----
+if ! command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
+fi
+
+# ----Powerlevel10k----
+P10K_PATH="$HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme"
 if [ -r "$P10K_PATH" ]; then
   source "$P10K_PATH"
   # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
 
-# Auto-suggestion
-AUTO_SUGGEST_PATH="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-if [ -r "$AUTO_SUGGEST_PATH" ]; then
-  source "$AUTO_SUGGEST_PATH"
-fi
-
-# Syntax highlight - ALWAYS KEEP AS LAST SOURCE
-HIGHLIGHT_PATH="$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-if [ -r "$HIGHLIGHT_PATH" ]; then
-  source "$HIGHLIGHT_PATH"
+# ---Plugins----
+if [ -r "$HOME/.zsh/plugins/plugins.zsh" ]; then
+  source "$HOME/.zsh/plugins/plugins.zsh"
 fi

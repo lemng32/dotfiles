@@ -1,9 +1,12 @@
-[submodule "zsh/.zsh/themes/powerlevel10k"]
-	path = zsh/.zsh/themes/powerlevel10k
-	url = git@github.com:lemng32/powerlevel10k.git
-[submodule "zsh/.zsh/zsh-syntax-highlighting"]
-	path = zsh/.zsh/zsh-syntax-highlighting
-	url = git@github.com:lemng32/zsh-syntax-highlighting.git
-[submodule "zsh/.zsh/zsh-autosuggestions"]
-	path = zsh/.zsh/zsh-autosuggestions
-	url = git@github.com:lemng32/zsh-autosuggestions.git
+[submodule "zsh/.zsh/powerlevel10k"]
+	path = zsh/.zsh/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
+[submodule "zsh/.zsh/plugins/fzf-tab/fzf-tab"]
+	path = zsh/.zsh/plugins/fzf-tab/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git
+[submodule "zsh/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions"]
+	path = zsh/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting"]
+	path = zsh/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
