@@ -1,1 +1,1 @@
-require("lemp")
+require("config.lazy")
