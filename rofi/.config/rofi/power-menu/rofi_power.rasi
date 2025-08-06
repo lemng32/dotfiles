@@ -15,7 +15,7 @@ element active {
   text-color:       @active-foreground;
 }
 element selected.normal {
-  background-color: @red;
+  background-color: @mauve;
   text-color:       @selected-normal-foreground;
 }
 element selected.urgent {
@@ -37,7 +37,6 @@ element-text {
 window {
   anchor:           northeast;
   location:         northeast;
-  y-offset:         40px;
   padding:          5;
   background-color: @background;
   border-color:     @surface1;
