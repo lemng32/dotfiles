@@ -77,3 +77,7 @@ fi
 if [ -r "$HOME/.zsh/plugins/plugins.zsh" ]; then
   source "$HOME/.zsh/plugins/plugins.zsh"
 fi
+
+#---Zprof---
+# Uncomment the line below if you want to run zprof on execution
+# zprof
