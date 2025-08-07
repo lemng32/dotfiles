@@ -18,11 +18,17 @@ return {
           LineNrAbove = { fg = colors.overlay1 },
           LineNrBelow = { fg = colors.overlay1 },
           TermCursor = { bg = "#f4b8e4" },
-          Visual = { bg = colors.surface2 },
+          Visual = { bg = colors.surface1 },
           CursorLine = { bg = colors.surface1 },
+
+          BlinkCmpMenu = { bg = colors.base },
+          BlinkCmpDoc = { bg = colors.base },
+          BlinkCmpMenuBorder = { fg = colors.surface2 },
+          BlinkCmpDocBorder = { fg = colors.surface2 },
+          BlinkCmpDocSeparator = { fg = colors.sky, bg = colors.base }
         }
       end
     })
-    vim.cmd([[colorscheme catppuccin]])
+    vim.cmd.colorscheme('catppuccin')
   end,
 }

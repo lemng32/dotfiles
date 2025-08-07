@@ -9,16 +9,49 @@ return {
   opts = {
     keymap = { preset = 'super-tab' },
     appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono'
     },
-    -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
-    sources = {
-      default = { 'lsp', 'path' },
+    completion = {
+      documentation = {
+        auto_show = false,
+        window = {
+          border = "rounded",
+        },
+      },
+      list = {
+        selection = {
+          auto_insert = false
+        },
+      },
+      menu = {
+        border = "rounded",
+        draw = {
+          padding = { 1, 2 },
+          gap = 3,
+          columns = { { 'label' }, { 'kind_icon', 'kind', gap = 1 }, },
+          components = {
+            kind_icon = {
+              text = function(ctx) return "[" .. ctx.kind_icon .. "]" .. ctx.icon_gap end,
+            },
+            label = {
+              width = { fill = true, max = 20 },
+            },
+          },
+        },
+      },
     },
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    sources = {
+      default = { 'lsp', 'path', 'buffer' },
+    },
+    fuzzy = { implementation = "prefer_rust_with_warning" },
+    cmdline = {
+      enabled = true,
+      keymap = { preset = 'inherit' },
+      sources = { 'buffer', 'cmdline' },
+      completion = {
+        ghost_text = { enabled = true }
+      },
+    },
   },
-  opts_extend = { "sources.default" }
+  opts_extend = { "sources.default" },
 }
