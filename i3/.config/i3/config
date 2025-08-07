@@ -81,6 +81,12 @@ exec --no-startup-id xset dpms 1800 1800 1800
 # Start polkit agent
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
+# Start picom as daemon
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
+
+# Start ibus-daemon
+exec --no-startup-id ibus-daemon --xim
+
 # Use pactl and wpctl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 1%+ -l 1 && $refresh_i3status
@@ -256,9 +262,6 @@ bindsym $mod+slash exec kitty -1 --detach -e btm
 # Screenshot
 bindsym Shift+Print exec NOW=$(date +%d-%b-%Y_%H-%M-%S) && maim --format png --select > ~/Pictures/screenshots/screenshot_$NOW.png && xclip -selection clip -t image/png ~/screenshots/screenshot_$NOW.png
 
-# Constraining floating window size
-floating_maximum_size 750 x 750
-
 # Popups during fullscreen mode
 popup_during_fullscreen smart
 
@@ -272,9 +275,6 @@ for_window [class="Pix"] border pixel 3
 # Gaps
 gaps inner 9
 gaps top 48
-
-#Start picom as daemon
-exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
 
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
