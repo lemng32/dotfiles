@@ -4,6 +4,7 @@
 ## About
 
 Probably the worst dotfiles config you will ever find!
+
 Distro: Linux Mint Cinnamon 22.1
 
 ![alt-text](https://github.com/lemng32/lemp/blob/main/i-am-goon.jpg "I am goon")
