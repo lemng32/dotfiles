@@ -48,11 +48,6 @@ if [ -r "$HOME/.zsh_aliases" ]; then
   source "$HOME/.zsh_aliases" 
 fi
 
-# ----Fuzzy finder----
-# if ! command -v fzf &> /dev/null; then
-#   source <(fzf --zsh)
-# fi
-
 # ----Powerlevel10k----
 P10K_PATH="$HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme"
 if [ -r "$P10K_PATH" ]; then
