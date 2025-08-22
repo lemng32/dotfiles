@@ -18,6 +18,7 @@ return {
       bashls = {
         filetypes = { "bash", "sh", "zsh" },
       },
+      cssls = {},
       pyright = {},
       ts_ls = {},
     }
@@ -42,6 +43,5 @@ return {
       vim.lsp.config(server, config)
       vim.lsp.enable(server)
     end
-    
   end
 }
