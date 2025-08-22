@@ -1,12 +1,14 @@
+@import "mocha.css";
+
 * {
-  font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-  font-size: 13px;
+  font-family: 'Mononoki Nerd Font', monospace;
+  font-size: 14px;
+  border-radius: 10px;
 }
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 0.5);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-  color: #ffffff;
+  background-color: alpha(@surface1, 0.5);
+  color: @text;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -44,7 +46,6 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
   background: inherit;
-  box-shadow: inset 0 -3px #ffffff;
 }
 
 /* you can set a style on hover for any module like this */
@@ -53,22 +54,21 @@ button:hover {
 }
 
 #workspaces button {
-  padding: 0 5px;
+  padding: 0 7px;
   background-color: transparent;
-  color: #ffffff;
+  color: @text;
 }
 
 #workspaces button:hover {
   background: rgba(0, 0, 0, 0.2);
 }
 
-#workspaces button.focused {
-  background-color: #64727D;
-  box-shadow: inset 0 -3px #ffffff;
+#workspaces button.active {
+  background-color: alpha(@pink, 0.3);
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: @red;
 }
 
 #mode {
@@ -93,8 +93,8 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-  padding: 0 10px;
-  color: #ffffff;
+  padding: 0px 10px;
+  color: @text;
 }
 
 #window,
@@ -103,27 +103,37 @@ button:hover {
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
+.modules-left {
+  background-color: @base;
+  padding: 0px 7px;
+  margin-left: 4px;
+  border: 3px solid @mauve;
+  border-radius: 20px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
+.modules-right {
+  margin-right: 10px;
+}
+
+.modules-center {
+  background-color: @base;
+  padding: 0px 25px;
+  border: 3px solid @sky;
+  border-radius: 20px;
 }
 
 #clock {
-  background-color: #64727D;
 }
 
 #battery {
-  background-color: #ffffff;
-  color: #000000;
+  border: 3px solid @overlay2;
+  color: @text;
 }
 
 #battery.charging, #battery.plugged {
-  color: #ffffff;
-  background-color: #26A65B;
+  border: 3px solid @green;
+  color: @teal;
 }
 
 @keyframes blink {
@@ -135,17 +145,11 @@ to {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
-  /* animation-name: blink;
-animation-duration: 0.5s;
-animation-timing-function: steps(12);
-animation-iteration-count: infinite;
-animation-direction: alternate; */
+  border: 3px solid shade(@red, 0.8);
+  color: @red;
 }
 
 #power-profiles-daemon {
-  padding-right: 15px;
 }
 
 #power-profiles-daemon.performance {
