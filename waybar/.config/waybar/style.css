@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-  font-family: 'Mononoki Nerd Font', monospace;
+  font-family: 'Mononoki Nerd Font Propo', monospace;
   font-size: 14px;
   border-radius: 10px;
 }
@@ -54,8 +54,7 @@ button:hover {
 }
 
 #workspaces button {
-  padding: 0 7px;
-  background-color: transparent;
+  padding: 0 5px;
   color: @text;
 }
 
@@ -64,11 +63,11 @@ button:hover {
 }
 
 #workspaces button.active {
-  background-color: alpha(@pink, 0.3);
+  color: @pink;
 }
 
 #workspaces button.urgent {
-  background-color: @red;
+  color: @red;
 }
 
 #mode {
@@ -92,46 +91,47 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#custom-fcitx5,
+#custom-power,
 #mpd {
-  padding: 0px 10px;
-  color: @text;
+  padding: 0px 9px;
 }
 
 #window,
 #workspaces {
+  border: 3px solid @mauve;
+  border-radius: 20px;
+  background-color: @base;
   margin: 0 4px;
+  padding: 0 10px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left {
-  background-color: @base;
-  padding: 0px 7px;
   margin-left: 4px;
-  border: 3px solid @mauve;
-  border-radius: 20px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right {
-  margin-right: 10px;
+  margin-right: 4px;
 }
 
 .modules-center {
-  background-color: @base;
-  padding: 0px 25px;
-  border: 3px solid @sky;
-  border-radius: 20px;
 }
 
 #clock {
+  background-color: @base;
+  border: 3px solid @sky;
 }
 
 #battery {
-  border: 3px solid @overlay2;
+  background-color: @base;
+  border: 3px solid @green;
   color: @text;
 }
 
 #battery.charging, #battery.plugged {
+  background-color: @base;
   border: 3px solid @green;
   color: @teal;
 }
@@ -150,21 +150,20 @@ to {
 }
 
 #power-profiles-daemon {
+  background-color: @base;
+  border: 3px solid @mauve;
 }
 
 #power-profiles-daemon.performance {
-  background-color: #f53c3c;
-  color: #ffffff;
+  color: @red;
 }
 
 #power-profiles-daemon.balanced {
-  background-color: #2980b9;
-  color: #ffffff;
+  color: @sapphire;
 }
 
 #power-profiles-daemon.power-saver {
-  background-color: #2ecc71;
-  color: #000000;
+  color: @green;
 }
 
 label:focus {
@@ -185,25 +184,33 @@ label:focus {
 }
 
 #backlight {
-  background-color: #90b1b1;
+  background-color: @base;
+  border: 3px solid @yellow;
+  color: @yellow;
 }
 
 #network {
-  background-color: #2980b9;
+  background-color: @base;
+  border: 3px solid @blue;
+  color: @sky;
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  background-color: @base;
+  border: 3px solid @overlay1;
+  color: @overlay1;
 }
 
 #pulseaudio {
-  background-color: #f1c40f;
-  color: #000000;
+  background-color: @base;
+  border: 3px solid @lavender;
+  color: @lavender;
 }
 
 #pulseaudio.muted {
-  background-color: #90b1b1;
-  color: #2a5c45;
+  background-color: @base;
+  border: 3px solid @overlay1;
+  color: @overlay1;
 }
 
 #wireplumber {
@@ -327,4 +334,16 @@ label:focus {
 
 #privacy-item.audio-out {
   background-color: #0069d4;
+}
+
+#custom-power {
+  background-color: @base;
+  border: 3px solid shade(@red, 0.8);
+  color: @red;
+}
+
+#custom-fcitx5 {
+  background-color: @base;
+  border: 3px solid @pink;
+  color: @pink;
 }
