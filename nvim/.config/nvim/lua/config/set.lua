@@ -3,7 +3,6 @@ vim.opt.guicursor = {
 }
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
 
 vim.api.nvim_create_autocmd("InsertEnter", {
   callback = function() vim.o.relativenumber = false end,
@@ -11,6 +10,16 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 
 vim.api.nvim_create_autocmd("InsertLeave", {
   callback = function() vim.o.relativenumber = true end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+  end,
 })
 
 vim.opt.tabstop = 2

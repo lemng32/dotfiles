@@ -18,7 +18,6 @@ return {
       bashls = {
         filetypes = { "bash", "sh", "zsh" },
       },
-      cssls = {},
       pyright = {},
       ts_ls = {},
     }

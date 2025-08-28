@@ -4,7 +4,5 @@ return {
   ft = { 'markdown', 'quatro' },
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
-  opts = {
-    completions = { blink = { enabled = true } },
-  },
+  opts = {},
 }
