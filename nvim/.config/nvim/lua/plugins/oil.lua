@@ -2,6 +2,11 @@ return {
   'stevearc/oil.nvim',
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   lazy = false,
+  keys = {
+    { "<leader>pv", "<cmd>Oil<cr>", "n" },
+    { "<leader>os", "<cmd>rightbelow Oil<cr>", "n"},
+    { "<leader>oo", "<cmd>rightbelow vert Oil<cr>", "n"},
+  },
   opts = {
     default_file_explorer = true,
     keymaps = {
@@ -20,7 +25,4 @@ return {
       show_hidden = true
     }
   },
-  keys = {
-    { "<leader>pv", "<cmd>Oil<cr>", "n" }  
-  }
 }

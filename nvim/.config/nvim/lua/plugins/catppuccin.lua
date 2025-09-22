@@ -11,6 +11,10 @@ return {
         dark = "mocha",
       },
       transparent_background = true,
+      float = {
+        transparent = false,
+        solid = false,
+      },
       color_overrides = {},
       custom_highlights = function(colors)
         return {
@@ -25,9 +29,15 @@ return {
           BlinkCmpDoc = { bg = colors.base },
           BlinkCmpMenuBorder = { fg = colors.surface2 },
           BlinkCmpDocBorder = { fg = colors.surface2 },
-          BlinkCmpDocSeparator = { fg = colors.sky, bg = colors.base }
+          BlinkCmpDocSeparator = { fg = colors.sky, bg = colors.base },
+
+          WinSeparator = { fg = colors.lavender }
         }
-      end
+      end,
+      integrations = {
+        lualine = true,
+        treesitter = true,
+      },
     })
     vim.cmd.colorscheme('catppuccin')
   end,

@@ -3,6 +3,7 @@ return {
   dependencies = {
     "mason-org/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+    "saghen/blink.cmp",
   },
   opts = {
     servers = {
@@ -39,8 +40,10 @@ return {
     })
 
     for server, config in pairs(opts.servers) do
+      config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
       vim.lsp.config(server, config)
       vim.lsp.enable(server)
     end
+
   end
 }
