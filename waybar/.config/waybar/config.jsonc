@@ -4,14 +4,13 @@
     "layer": "top",
     "output": "eDP-1",
     "height": 30,
-    "width": 1575,
-    "spacing": 7,
-    "margin-top": 10,
+    "width": 1579,
+    "spacing": 5,
+    "margin-top": 8,
     "include": [
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/power",
       "power-profiles-daemon",
       "custom/fcitx5",
       "network",
@@ -39,7 +38,6 @@
       "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-      "custom/power",
       "power-profiles-daemon",
       "custom/fcitx5",
       "network",

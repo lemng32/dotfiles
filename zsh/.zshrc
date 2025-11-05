@@ -1,5 +1,7 @@
 zmodload zsh/zprof
 
+export PATH="$PATH:/home/lemp/.local/bin"
+
 source "$HOME/.zsh_env"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -73,3 +75,10 @@ fi
 #---Zprof---
 # Uncomment the line below if you want to run zprof on execution
 # zprof
+
+# bun completions
+[ -s "/home/lemp/.bun/_bun" ] && source "/home/lemp/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

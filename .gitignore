@@ -1,1 +1,5 @@
 **/.zsh_aliases
+wallpaper/
+*wallpaper/
+
+*.p10k.zsh.bak

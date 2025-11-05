@@ -6,6 +6,20 @@ return {
     { "<leader>pv", "<cmd>Oil<cr>", "n" },
     { "<leader>os", "<cmd>rightbelow Oil<cr>", "n"},
     { "<leader>oo", "<cmd>rightbelow vert Oil<cr>", "n"},
+    {
+      "<leader>yp",
+      function()
+        local dir = require("oil").get_current_dir()
+        if dir then
+          vim.fn.setreg("+", dir)
+          vim.notify("Copied directory path:\n" .. dir, vim.log.levels.INFO)
+        else
+          vim.notify("Not in an Oil buffer", vim.log.levels.WARN)
+        end
+      end,
+      "n",
+      ft = "oil",
+    },
   },
   opts = {
     default_file_explorer = true,

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SELECTION="$(printf "󰌾  Lock\n󰤄  Suspend\n󰜉  Reboot\n󰐥  Shutdown" \
+  | fuzzel --dmenu -l 4 -p "Power menu: ")"
+
+case $SELECTION in
+	*"Lock")
+		hyprlock;;
+	*"Suspend")
+		systemctl suspend;;
+	*"Reboot")
+		systemctl reboot;;
+	*"Shutdown")
+		systemctl poweroff;;
+esac
